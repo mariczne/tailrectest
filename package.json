@@ -1,0 +1,17 @@
+{
+  "name": "tailrectest",
+  "module": "main.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.10"
+  },
+  "scripts": {
+    "test": "bun test main.test.ts"
+  }
+}
