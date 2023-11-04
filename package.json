@@ -9,7 +9,8 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "dayjs": "^1.11.10"
+    "dayjs": "^1.11.10",
+    "linked-list-typed": "^1.41.6"
   },
   "scripts": {
     "test": "bun test main.test.ts"
