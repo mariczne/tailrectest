@@ -3,36 +3,23 @@ import {
   SinglyLinkedList as LinkedList,
 } from "linked-list-typed";
 
-function auxGenerateValidDatesForRange(
-  nextDate: Dayjs,
+export function generateValidDatesForRangeRecursively(
+  startDate: Dayjs,
   endDate: Dayjs,
   step = 15,
-  acc: LinkedList<Dayjs>
-): Dayjs[] {
-  if (nextDate.isAfter(endDate)) {
+  acc: LinkedList<Dayjs> = new LinkedList<Dayjs>()
+  ): Dayjs[] {
+  if (startDate.isAfter(endDate)) {
     return acc.toArray();
   } else {
-    acc.push(nextDate);
-    return auxGenerateValidDatesForRange(
-      nextDate.add(step, "minute"),
+    acc.push(startDate);
+    return generateValidDatesForRangeRecursively(
+      startDate.add(step, "minute"),
       endDate,
       step,
       acc
     );
   }
-}
-
-export function generateValidDatesForRangeRecursively(
-  startDate: Dayjs,
-  endDate: Dayjs,
-  step = 15
-): Dayjs[] {
-  return auxGenerateValidDatesForRange(
-    startDate,
-    endDate,
-    step,
-    new LinkedList()
-  );
 }
 
 export function generateValidDatesForRangeProcedurally(
