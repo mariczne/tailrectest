@@ -27,7 +27,7 @@ export function generateValidDatesForRangeProcedurally(
   endDate: Dayjs,
   step = 15
 ): Dayjs[] {
-  const dateList = [];
+  const dateList = new LinkedList<Dayjs>();
   let currentDate = startDate;
 
   while (currentDate <= endDate) {
@@ -35,5 +35,5 @@ export function generateValidDatesForRangeProcedurally(
     currentDate = currentDate.add(step, "minute");
   }
 
-  return dateList;
+  return dateList.toArray();
 }
